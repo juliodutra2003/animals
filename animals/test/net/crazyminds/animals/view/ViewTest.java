@@ -10,18 +10,18 @@ public class ViewTest {
 	@Test
 	public final void ValidateAnswerForRightSInput() 
 	{
-		assertTrue(View.ValidateAnswer("s"));
+		assertTrue(View.getInstance().ValidateAnswer("s"));
 	}
 
 	@Test
 	public final void ValidateAnswerForRightNInput() 
 	{
-		assertTrue(View.ValidateAnswer("n"));
+		assertTrue(View.getInstance().ValidateAnswer("n"));
 	}
 	
 	@Test
 	public final void ValidateAnswerForWrongInput() 
 	{
-		assertFalse(View.ValidateAnswer("y"));
+		assertFalse(View.getInstance().ValidateAnswer("y"));
 	}
 }

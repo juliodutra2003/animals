@@ -7,17 +7,31 @@ import java.nio.charset.Charset;
 
 public class View {
 	
-	static BufferedReader consoleReader = new BufferedReader(new InputStreamReader(System.in, Charset.defaultCharset()));	
+	static BufferedReader consoleReader;	
 	
 	private static final String startMessageHelper =  " (pressione enter para começar)" ;
 	private static final String yesOrNotMessageHelper =  " (use (s) para SIM, (n) para NÃO)" ;
 	private static final String getStringMessageHelper =  " (após escolher pressione enter)" ;
 	
+	private static View instance;
+	
+	//synchronized - not allow more then one instance, by method being called by two different threads.
+	public static synchronized View getInstance()
+	{
+		if(instance == null)
+			instance = new View();
+		return instance;
+	}
+	
+	View()
+	{
+		consoleReader = new BufferedReader(new InputStreamReader(System.in, Charset.defaultCharset()));
+	}
 	
 	/**
 	 * Show the entering message of the game
 	 */
-	public static void ShowOpenning() 
+	public void ShowOpenning() 
 	{
 		System.out.println("Welcome to the Game - v0.1 SNAPSHOT");
 		System.out.println("----------------------------------------------------------------------");
@@ -34,7 +48,7 @@ public class View {
 	 *
 	 * @param question is the message to be printed
 	 */
-	public static boolean ShowQuestion(String question)
+	public boolean ShowQuestion(String question)
 	{
 		System.out.println(question +"? " + yesOrNotMessageHelper);
 		String input = "";
@@ -69,7 +83,7 @@ public class View {
 	 * 
 	 * @return true if the input is equals to 'n' or 's'. Returns false if any other characters are passed as input.
 	 */
-	private static boolean ValidateAnswer(String input) 
+	public boolean ValidateAnswer(String input) 
 	{		
 		if(input.equals("n") || input.equals("s"))
 		{
@@ -85,7 +99,7 @@ public class View {
 	 * @param message is the message to be printed
 	 * 
 	 */
-	public static void ShowStartGameMessage(String message) 
+	public void ShowStartGameMessage(String message) 
 	{
 		System.out.println(message + startMessageHelper);
 		try 
@@ -104,7 +118,7 @@ public class View {
 	 * @param message is a message to print
 	 * 
 	 */
-	public static void ShowMessage(String message) 
+	public void ShowMessage(String message) 
 	{
 		System.out.println(message);
 	}
@@ -117,7 +131,7 @@ public class View {
 	 * 
 	 * @return a string with the value inserted by the user
 	 */
-	public static String ShowGetString(String question) 
+	public String ShowGetString(String question) 
 	{
 		System.out.println(question + getStringMessageHelper);
 		
