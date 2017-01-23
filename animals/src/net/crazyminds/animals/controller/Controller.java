@@ -1,6 +1,7 @@
 package net.crazyminds.animals.controller;
 
 import net.crazyminds.animals.model.Node;
+import net.crazyminds.animals.model.Tree;
 import net.crazyminds.animals.view.View;
 
 public class Controller {
@@ -33,9 +34,6 @@ public class Controller {
 			{
 				AskPlayer(tree.getNo());
 			}
-			
-			//AskPlayer(tree);	
-			//endGame = 0;
 		}
 	}
 	
@@ -64,7 +62,7 @@ public class Controller {
 		{
 			if ( node.getNo() == null )
 			{
-				addNewAnimal(node);
+				Tree.AddNewAnimal(node);
 			}
 			else
 			{
@@ -72,24 +70,4 @@ public class Controller {
 			}
 		}
 	}
-	
-	
-	/**
-	 * Adds a new node in the binary tree
-	 * 
-	 * @param node is the one who receives a child node.
-	 * 
-	 */
-	private void addNewAnimal(Node node)
-	{
-			String name  = View.ShowGetString("Qual o animal que você pensou?");
-
-			String characteristic = View.ShowGetString("Um(a) " + name + "______ mas um(a) "+ node.getCharacteristic() +" não.");
-
-			
-			node.setNo( new Node( node.getCharacteristic()) );	
-			node.setYes(new Node("é "+ name) );
-			node.setCharacteristic(characteristic);
-	}
-
 }

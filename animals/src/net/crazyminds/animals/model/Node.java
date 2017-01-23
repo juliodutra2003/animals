@@ -2,6 +2,8 @@ package net.crazyminds.animals.model;
 
 import java.util.ArrayList;
 
+import net.crazyminds.animals.view.View;
+
 
 /**
  * 
@@ -45,6 +47,4 @@ public class Node {
 	public void setNo(Node no) {
 		this.no = no;
 	}
-	
-	
 }
