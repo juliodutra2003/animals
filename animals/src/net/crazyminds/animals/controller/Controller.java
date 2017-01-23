@@ -15,16 +15,16 @@ public class Controller {
 		tree.setNo(new Node("é Macaco"));
 		
 		
-		View.ShowOpenning();
+		View.getInstance().ShowOpenning();
 		
 		int endGame = 1;
 
 		while (endGame == 1) 
 		{		
 			
-			View.ShowStartGameMessage("Pense em um animal" );
+			View.getInstance().ShowStartGameMessage("Pense em um animal" );
 			
-			boolean answerCharacteristic  = View.ShowQuestion("O animal que você pensou " + tree.getCharacteristic() );
+			boolean answerCharacteristic  = View.getInstance().ShowQuestion("O animal que você pensou " + tree.getCharacteristic() );
 			
 			if (answerCharacteristic)
 			{
@@ -45,13 +45,13 @@ public class Controller {
 	 */
 	private void AskPlayer(Node node) 
 	{		
-		boolean answerCharacteristic  = View.ShowQuestion("O animal que você pensou " + node.getCharacteristic() );
+		boolean answerCharacteristic  = View.getInstance().ShowQuestion("O animal que você pensou " + node.getCharacteristic() );
 		
 		if (answerCharacteristic)
 		{
 			if ( node.getYes() == null )
 			{
-				View.ShowMessage( "Acertei de novo!");
+				View.getInstance().ShowMessage( "Acertei de novo!");
 			}
 			else
 			{
@@ -62,7 +62,11 @@ public class Controller {
 		{
 			if ( node.getNo() == null )
 			{
-				Tree.AddNewAnimal(node);
+				String name  = View.getInstance().ShowGetString("Qual o animal que você pensou?");
+
+				String characteristic = View.getInstance().ShowGetString("Um(a) " + name + "______ mas um(a) "+ node.getCharacteristic() +" não.");
+				
+				Tree.AddNewAnimal(node, name, characteristic);
 			}
 			else
 			{
