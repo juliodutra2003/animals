@@ -41,12 +41,8 @@ public class Controller {
 	
 	
 	private void AskPlayer(Node node) 
-	{
-		//boolean answerCharacteristic  = View.ShowQuestion("O animal que você pensou " + node.getCharacteristic() );
-		//boolean answerName = View.ShowQuestion("O animal que você pensou é " + node.getName() );
-		//View.ShowMessage( "Acertei de novo!");
-		
-		boolean answerCharacteristic  = View.ShowQuestion("O animal que você pensou: " + node.getCharacteristic() );
+	{		
+		boolean answerCharacteristic  = View.ShowQuestion("O animal que você pensou " + node.getCharacteristic() );
 		
 		if (answerCharacteristic)
 		{
@@ -82,8 +78,8 @@ public class Controller {
 			String characteristic = View.ShowGetString("Um(a) " + name + "______ mas um(a) "+ node.getCharacteristic() +" não.");
 
 			
-			node.setNo( new Node(node.getCharacteristic()) );	
-			node.setYes(new Node(name) );
+			node.setNo( new Node( node.getCharacteristic()) );	
+			node.setYes(new Node("é "+ name) );
 			node.setCharacteristic(characteristic);
 	}
 
