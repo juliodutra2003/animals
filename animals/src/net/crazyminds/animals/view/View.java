@@ -13,6 +13,10 @@ public class View {
 	private static final String yesOrNotMessageHelper =  " (use (s) para SIM, (n) para NÃO)" ;
 	private static final String getStringMessageHelper =  " (após escolher pressione enter)" ;
 	
+	
+	/**
+	 * Show the entering message of the game
+	 */
 	public static void ShowOpenning() 
 	{
 		System.out.println("Welcome to the Game - v0.1 SNAPSHOT");
@@ -21,7 +25,15 @@ public class View {
 		System.out.println("juliodutra2003@yahoo.com.br");
 		System.out.println("----------------------------------------------------------------------");		
 	}
-
+	
+	
+	/**
+	 * Show a parameterized question in the prompt command line, and read the answer. 
+	 * Only answers 's' or 'n''will be accepted.
+	 * Will stop and wait for the 'enter' command
+	 *
+	 * @param question is the message to be printed
+	 */
 	public static boolean ShowQuestion(String question)
 	{
 		System.out.println(question +"? " + yesOrNotMessageHelper);
@@ -50,6 +62,13 @@ public class View {
 		}
 	}
 
+	/**
+	 * Validate the string input.
+	 *
+	 * @param input is a string
+	 * 
+	 * @return true if the input is equals to 'n' or 's'. Returns false if any other characters are passed as input.
+	 */
 	private static boolean ValidateAnswer(String input) 
 	{		
 		if(input.equals("n") || input.equals("s"))
@@ -60,6 +79,12 @@ public class View {
 		return false;
 	}
 
+	/**
+	 * Show Start Game Message and waits until user press 'enter'.
+	 *
+	 * @param message is the message to be printed
+	 * 
+	 */
 	public static void ShowStartGameMessage(String message) 
 	{
 		System.out.println(message + startMessageHelper);
@@ -73,11 +98,25 @@ public class View {
 		}
 	}
 	
+	/**
+	 * Show a generic message to be printed in the console
+	 *
+	 * @param message is a message to print
+	 * 
+	 */
 	public static void ShowMessage(String message) 
 	{
 		System.out.println(message);
 	}
 
+	
+	/**
+	 * Asks for a string to be inserted from user. Waits until user press 'enter'.
+	 *
+	 * @param question is a enlightening message to the user
+	 * 
+	 * @return a string with the value inserted by the user
+	 */
 	public static String ShowGetString(String question) 
 	{
 		System.out.println(question + getStringMessageHelper);

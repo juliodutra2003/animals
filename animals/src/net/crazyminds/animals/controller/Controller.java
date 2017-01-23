@@ -65,10 +65,7 @@ public class Controller {
 			{
 				AskPlayer(node.getNo());
 			}
-			
-			//addNewAnimal(node);
 		}
-
 	}
 	
 	private void addNewAnimal(Node node)
