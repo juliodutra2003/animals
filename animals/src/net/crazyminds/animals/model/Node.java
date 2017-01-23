@@ -2,6 +2,14 @@ package net.crazyminds.animals.model;
 
 import java.util.ArrayList;
 
+
+/**
+ * 
+ * @author julio
+ *
+ * Node represents the node object in the binary search tree
+ */
+
 public class Node {
 		
 	String characteristic; 

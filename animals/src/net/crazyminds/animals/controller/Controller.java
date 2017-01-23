@@ -40,6 +40,11 @@ public class Controller {
 	}
 	
 	
+	/**
+	 * Recursive method - search for a specific node.
+	 * 
+	 * @param node is the start node for the searching.
+	 */
 	private void AskPlayer(Node node) 
 	{		
 		boolean answerCharacteristic  = View.ShowQuestion("O animal que você pensou " + node.getCharacteristic() );
@@ -68,6 +73,13 @@ public class Controller {
 		}
 	}
 	
+	
+	/**
+	 * Adds a new node in the binary tree
+	 * 
+	 * @param node is the one who receives a child node.
+	 * 
+	 */
 	private void addNewAnimal(Node node)
 	{
 			String name  = View.ShowGetString("Qual o animal que você pensou?");
