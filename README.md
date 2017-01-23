@@ -31,3 +31,11 @@ Foi criado uma simples classe de testes unitários (Unity Test) para demonstrar 
 * clique com o botão direito do mouse na pasta "test";
 * clique em folder-> Run As -> JUnit Test;
 * são 3 testes unitários, uma classe de testes.
+
+##Problemas computacionais
+Problemas computacionais são sempre os melhores problemas para um analista de sistemas. São geralmente aqueles problemas que trouxeram o profissional para a área de análise de sistemas, TI, desenvolviemtno, etc.
+Mas às vezes estes problemas superam o nosso conhecimento/experiência e precisamos resolver de outra forma. 
+Eu sempre:
+* Considero um problema sem solução conhecida por mim um problema ao qual eu não pesquisei à exaustão na internet e em livros. Existem centenas de fontes confiáveis de conteúdo na internet que podem ser consultados livremente. Em alguns casos esta consulta está limitada à clientes, mas pode vir a ser uma ajuda para aqueles que tem acesso. (Ou seja, pesquisa na internet, suporte do fornecedor)
+* Quando o problema já foi exaustivamente pesquisado isoladamente, Eu considero a análise pelos pares uma excelente forma de expandir os horizontes do problema, ver o problema sob uma nova ótica e principalmente buscar dos colegas informações que eles possam trazer de suas experiências anteriores. (Ou seja, análise por colegas de trabalho atuais e anteriores)
+* Por último, e não pretendendo exaurir formas de busca de soluções a problemas, considero a consulta à professores e doutores em suas áreas, que por muitas vêzes trazem algo de novo, oriundo de pesquisas recentes, aplicáveis já para o mercado. Outras vêzes estes simplesmente nos relembram aquela "teoria esquecida" do segundo semestre da universidade.
